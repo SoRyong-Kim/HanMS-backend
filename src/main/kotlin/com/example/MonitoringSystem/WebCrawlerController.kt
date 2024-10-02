@@ -11,10 +11,10 @@ class WebCrawlerController(private val webCrawlerService: WebCrawlerService) {
         return webCrawlerService.crawlMSubjects1(url)
     }
 
-    @GetMapping("/api/crawl-list2")
-    fun crawlListTags2(@RequestParam url: String): List<String> {
-        return webCrawlerService.crawlMSubjects2(url)
-    }
+//    @GetMapping("/api/crawl-list2")
+//    fun crawlListTags2(@RequestParam url: String): List<String> {
+//        return webCrawlerService.crawlMSubjects2(url)
+//    }
 
     @GetMapping("/api/crawl-list3")
     fun crawlListTags3(@RequestParam url: String): List<String> {

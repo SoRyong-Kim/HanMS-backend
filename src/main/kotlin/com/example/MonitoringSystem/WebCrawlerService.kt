@@ -20,8 +20,8 @@ class WebCrawlerService {
         return listItems
     }
 
-    fun crawlMSubjects2(url: String): List<String> {
-    }
+//    fun crawlMSubjects2(url: String): List<String> {
+//    }
 
     fun crawlMSubjects3(url: String): List<String> {
         // Jsoup을 사용하여 웹 페이지를 가져옴
