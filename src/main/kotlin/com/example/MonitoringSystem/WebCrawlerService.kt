@@ -20,8 +20,25 @@ class WebCrawlerService {
         return listItems
     }
 
-//    fun crawlMSubjects2(url: String): List<String> {
-//    }
+    fun crawlMSubjects2(url: String): List<String> {
+        val treatments = mutableListOf<String>()
+        try {
+            // Jsoup으로 해당 URL에서 HTML 문서 가져오기
+            val doc = Jsoup.connect(url).get()
+
+            // 원하는 데이터를 가져오기 위한 선택자
+            val elements = doc.select("div.menu-item ul li a")
+
+            // 선택된 요소의 텍스트를 리스트에 저장
+            for (element in elements) {
+                treatments.add(element.text())
+            }
+        } catch (e: Exception) {
+            println("Error occurred while crawling $url: ${e.message}")
+        }
+
+        return treatments
+    }
 
     fun crawlMSubjects3(url: String): List<String> {
         // Jsoup을 사용하여 웹 페이지를 가져옴
